@@ -236,7 +236,6 @@ document.addEventListener('DOMContentLoaded', function () {
         entries.forEach(entry => {
             // Verifica se o elemento está atualmente visível (intersecting)
             if (entry.isIntersecting) {
-                // Adiciona a classe '.visible' para acionar a transição CSS
                 entry.target.classList.add('visible');
 
                 // --- Lógica extra para o contador animado ---
@@ -246,9 +245,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
 
                 // Uma vez que a animação foi acionada, paramos de observar o elemento.
-                // Isso é uma ótima prática para performance, pois o navegador não precisa mais
-                // verificar a posição deste elemento.
-                
+
             } // Caso a gente queira que a animação se repita quando visualizada outra vez, insira o código:
             // else {
             //    entry.target.classList.remove('visible');
@@ -260,7 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const observer = new IntersectionObserver(observerCallback, observerOptions);
 
     // Seleciona TODOS os elementos que devem ser animados quando aparecerem na tela.
-    // Usamos seletores genéricos para cobrir todas as seções de uma vez.
     const elementsToAnimate = document.querySelectorAll(`
         .section-header,
         .about-text .lead,
@@ -283,8 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Animação dos contadores de números
 
-    // Seleciona os elementos do contador para serem observados separadamente,
-    // pois eles têm uma lógica de animação diferente (o número subindo).
+    // Seleciona os elementos do contador para serem observados separadamente, pois eles têm uma lógica de animação diferente (o número subindo).
     const statsCounters = document.querySelectorAll('.stat-number');
     statsCounters.forEach(counter => observer.observe(counter)); // Também os adicionamos ao observador
 
@@ -292,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const animateCounter = (element) => {
         const targetValue = parseInt(element.getAttribute('data-value'), 10);
         let currentValue = 0;
-        const duration = 1500; // Duração da animação em milissegundos (1.5s)
+        const duration = 1500;
         const stepTime = Math.abs(Math.floor(duration / targetValue));
 
         const timer = setInterval(() => {
@@ -308,7 +303,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, stepTime);
     };
 
-    /* Menu Hamburger para dispositivos móveis */
+    // Menu Hamburger para dispositivos móveis
     const menu = document.querySelector('.menu');
     const menuToggle = document.querySelector('.menu-toggle');
     const menuLinks = document.querySelectorAll('.menu ul a');
@@ -332,6 +327,5 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Garante que o estado inicial do header seja verificado no carregamento da página
-    // handleHeaderScroll(); // Certifique-se de que esta linha está presente e funcionando
     handleHeaderScroll();
 });

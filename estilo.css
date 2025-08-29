@@ -697,6 +697,7 @@ A propriedade 'transition' garante que a mudança para o estado visível seja su
 }
 
 
+
 /* Seção Serviços */
 .services {
     padding: var(--section-padding);
@@ -930,6 +931,8 @@ A propriedade 'transition' garante que a mudança para o estado visível seja su
     }
 }
 
+
+
 /* Seção Contato */
 .contact {
     padding: var(--section-padding);
@@ -1094,6 +1097,7 @@ footer {
 }
 
 
+
 /* Otimizações para animações suaves */
 .section-animated,
 .service-card,
@@ -1107,8 +1111,7 @@ footer {
 
 
 
-/* RESPONSIVIDADE ESTRATÉGICA (Ajustes para Telas Menores) */
-
+/* Otimização para tablets */
 @media (max-width: 1024px) {
     
     :root {
@@ -1206,6 +1209,8 @@ footer {
 }
 
 
+
+/* Otimização para celulares */
 @media (max-width: 768px) {
 
     :root {
@@ -1324,7 +1329,6 @@ footer {
 
     }
 }
-
 
 
 
